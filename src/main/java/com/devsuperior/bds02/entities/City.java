@@ -1,5 +1,7 @@
 package com.devsuperior.bds02.entities;
 
+import com.devsuperior.bds02.dto.CityDTO;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +24,9 @@ public class City {
 	@OneToMany(mappedBy = "city")
 	private List<Event> events = new ArrayList<>();
 	
-	public City() {
+	public City(CityDTO dto) {
+		id = dto.getId();
+		name = dto.getName();
 	}
 
 	public City(Long id, String name) {
