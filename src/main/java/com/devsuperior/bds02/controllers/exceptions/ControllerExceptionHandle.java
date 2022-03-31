@@ -28,7 +28,6 @@ public class ControllerExceptionHandle {
 
     @ExceptionHandler(DataBasesException.class)
     public ResponseEntity<StandardError> entityNotFound(DataBasesException e, HttpServletRequest request) {
-        System.out.println("ENTROU");
         StandardError err = new StandardError();
         HttpStatus status = HttpStatus.BAD_REQUEST;
 
